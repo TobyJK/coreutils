@@ -31,7 +31,7 @@ windows = [ "feat_os_windows" ]
 nightly = []
 test_unimplemented = []
 # * only build `uudoc` when `--feature uudoc` is activated
-uudoc = ["zip"]
+uudoc = ["zip", "dep:help_parser"]
 ## features
 # "feat_acl" == enable support for ACLs (access control lists; by using`--features feat_acl`)
 # NOTE:
@@ -289,7 +289,7 @@ half = "2.2"
 indicatif = "0.17"
 is-terminal = "0.4.6"
 itertools = "0.10.5"
-libc = "0.2.141"
+libc = "0.2.142"
 lscolors = { version = "0.14.0", default-features=false, features = ["nu-ansi-term"] }
 memchr = "2"
 nix = { version="0.26", default-features=false }
@@ -311,6 +311,7 @@ rand_core = "0.6"
 rayon = "1.7"
 redox_syscall = "0.2"
 regex = "1.7.3"
+rstest = "0.17.0"
 rust-ini = "0.18.0"
 same-file = "1.0.6"
 selinux = "0.4"
@@ -356,6 +357,8 @@ phf = { workspace=true }
 selinux = { workspace=true, optional = true }
 textwrap = { workspace=true }
 zip = { workspace=true, optional = true }
+
+help_parser = { path="src/help_parser", optional = true }
 
 # * uutils
 uu_test  = { optional=true, version="0.0.18", package="uu_test", path="src/uu/test" }
